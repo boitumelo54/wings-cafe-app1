@@ -1,0 +1,143 @@
+/* App.css - Updated for better layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f5f0;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  margin-left: 250px; /* Default for desktop */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+/* Content area styling */
+.content-header {
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #D7CCC8;
+}
+
+.content-header h1 {
+  color: #5D4037;
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Card styles for content */
+.content-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #8B5A2B;
+}
+
+/* Button styles */
+.btn-primary {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #8B5A2B 0%, #6D4C41 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6D4C41 0%, #5D4037 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #5D4037;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #D7CCC8;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #FFF;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #8B5A2B;
+  box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.2);
+}
+
+/* Table styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.data-table th {
+  background-color: #F5F5F5;
+  color: #5D4037;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.data-table tr:hover {
+  background-color: #FFF9C4;
+}

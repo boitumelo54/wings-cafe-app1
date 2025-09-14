@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Coffee",
+      "description": "Hot brewed coffee",
+      "category": "Beverages",
+      "price": 2.50,
+      "quantity": 50,
+      "minStockLevel": 10
+    },
+    {
+      "id": 2,
+      "name": "Sandwich",
+      "description": "Chicken sandwich",
+      "category": "Food",
+      "price": 5.00,
+      "quantity": 20,
+      "minStockLevel": 5
+    }
+  ],
+  "transactions": [],
+  "customers": []
+}

@@ -1,0 +1,104 @@
+/* This code leaves only your background photo and the text */
+
+.dashboard {
+  padding: 20px;
+  background-image: url('./background.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  /* All text is white with a shadow for readability */
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.stat-card {
+  background: transparent;
+  box-shadow: none;
+  border-left: none;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: none; /* No shadow on hover */
+}
+
+.stat-card h3 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-card p {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.low-stock-alert {
+  background: transparent;
+  border-left: none;
+  box-shadow: none;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.low-stock-alert h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.low-stock-alert h3::before {
+  content: '⚠️';
+  margin-right: 10px;
+}
+
+.low-stock-alert ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.low-stock-alert li {
+  background-color: transparent;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.low-stock-alert li:hover {
+  background-color: transparent; /* No background color on hover */
+}
+
+.low-stock-alert li:last-child {
+  margin-bottom: 0;
+}
+
+.dashboard h2 {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  border-bottom: none; /* Removes the white border */
+  padding-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

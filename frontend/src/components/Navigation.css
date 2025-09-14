@@ -1,0 +1,238 @@
+/* Navigation.css - Updated with collapsible sidebar */
+.navigation {
+  width: 250px;
+  background: linear-gradient(135deg, #8B5A2B 0%, #6D4C41 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navigation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.navigation h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #FFD700;
+  font-family: 'Georgia', serif;
+}
+
+.toggle-nav {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation button {
+  width: 100%;
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
+}
+
+.navigation button:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(to bottom, #FFD700, #FFA000);
+}
+
+.navigation button.active {
+  background-color: rgba(255, 215, 0, 0.2);
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.navigation button.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(to bottom, #FFD700, #FFA000);
+}
+
+/* Main content area adjustment */
+.main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  background-color: #f8f5f0;
+  min-height: 100vh;
+}
+
+/* Collapsed state */
+.navigation.collapsed {
+  width: 70px;
+  transform: translateX(0);
+}
+
+.navigation.collapsed .navigation-header {
+  justify-content: center;
+  margin: 0 10px 20px;
+}
+
+.navigation.collapsed h2 {
+  display: none;
+}
+
+.navigation.collapsed .nav-text {
+  display: none;
+}
+
+.navigation.collapsed button {
+  text-align: center;
+  padding: 15px 10px;
+  justify-content: center;
+}
+
+.navigation.collapsed button:hover,
+.navigation.collapsed button.active {
+  padding-left: 10px;
+}
+
+.navigation.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 992px) {
+  .navigation {
+    width: 70px;
+    transform: translateX(0);
+  }
+  
+  .navigation-header {
+    justify-content: center;
+    margin: 0 10px 20px;
+  }
+  
+  .navigation h2 {
+    display: none;
+  }
+  
+  .nav-text {
+    display: none;
+  }
+  
+  .navigation button {
+    text-align: center;
+    padding: 15px 10px;
+    justify-content: center;
+  }
+  
+  .navigation button:hover,
+  .navigation button.active {
+    padding-left: 10px;
+  }
+  
+  .main-content {
+    margin-left: 70px;
+  }
+  
+  .toggle-nav {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: rgba(139, 90, 43, 0.8);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navigation {
+    width: 0;
+    transform: translateX(-100%);
+  }
+  
+  .navigation.open {
+    width: 250px;
+    transform: translateX(0);
+  }
+  
+  .navigation.open .nav-text {
+    display: inline;
+  }
+  
+  .navigation.open button {
+    text-align: left;
+    padding: 15px 25px;
+    justify-content: flex-start;
+  }
+  
+  .navigation.open button:hover,
+  .navigation.open button.active {
+    padding-left: 30px;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .navigation.open ~ .main-content {
+    margin-left: 0;
+  }
+  
+  .toggle-nav {
+    display: block;
+  }
+}
+
+/* Icon styles for navigation items */
+.nav-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.navigation.collapsed .nav-icon {
+  margin-right: 0;
+  font-size: 1.4rem;
+}
